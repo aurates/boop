@@ -2,6 +2,7 @@ package com.aurates.boop;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -49,7 +50,7 @@ public final class BoopPlugin extends JavaPlugin {
                 return true;
             }
 
-            Component message = Component.text(messageText, NamedTextColor.LIGHT_PURPLE);
+            Component message = Component.text(messageText, NamedTextColor.LIGHT_PURPLE).decorate(TextDecoration.BOLD);
             Component toTarget = Component.text("From " + sender.getName() + ": ", NamedTextColor.GRAY).append(message);
             Component toSender = Component.text("To " + target.getName() + ": ", NamedTextColor.GRAY).append(message);
             target.sendMessage(toTarget);
