@@ -34,7 +34,7 @@ public final class BoopPlugin extends JavaPlugin {
         public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
             Player target;
             if (args.length > 0) {
-                target = sender.getServer().getPlayerExact(args[0]);
+                target = sender.getServer().getPlayer(args[0]);
                 if (target == null) {
                     sender.sendMessage(Component.text("Player not found.", NamedTextColor.RED));
                     return true;

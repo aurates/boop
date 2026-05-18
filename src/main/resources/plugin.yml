@@ -1,4 +1,4 @@
-name: boop
+name: Boop
 version: '${project.version}'
 main: com.aurates.boop.BoopPlugin
 api-version: '1.21'
