@@ -47,6 +47,9 @@ public final class BoopPlugin extends JavaPlugin {
             }
 
             target.sendMessage(Component.text(target.getName() + ": " + messageText, NamedTextColor.LIGHT_PURPLE));
+            if (!sender.equals(target)) {
+                sender.sendMessage(Component.text("Sent to " + target.getName() + ".", NamedTextColor.LIGHT_PURPLE));
+            }
             return true;
         }
     }
