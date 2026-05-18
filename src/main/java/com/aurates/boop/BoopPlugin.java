@@ -33,24 +33,27 @@ public final class BoopPlugin extends JavaPlugin {
 
         @Override
         public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-            Player target;
-            if (args.length > 0) {
-                target = sender.getServer().getPlayer(args[0]);
-                if (target == null) {
-                    sender.sendMessage(Component.text("Player not found.", NamedTextColor.RED));
-                    return true;
-                }
-            } else if (sender instanceof Player player) {
-                target = player;
-            } else {
+            if (args.length == 0) {
                 sender.sendMessage(Component.text("Usage: /" + label + " <player>", NamedTextColor.RED));
                 return true;
             }
 
-            target.sendMessage(Component.text(target.getName() + ": " + messageText, NamedTextColor.LIGHT_PURPLE));
-            if (!sender.equals(target)) {
-                sender.sendMessage(Component.text("Sent to " + target.getName() + ".", NamedTextColor.LIGHT_PURPLE));
+            Player target = sender.getServer().getPlayer(args[0]);
+            if (target == null) {
+                sender.sendMessage(Component.text("Player not found.", NamedTextColor.RED));
+                return true;
             }
+
+            if (sender instanceof Player player && target.equals(player)) {
+                sender.sendMessage(Component.text("You cannot " + label + " yourself.", NamedTextColor.RED));
+                return true;
+            }
+
+            Component message = Component.text(messageText, NamedTextColor.LIGHT_PURPLE);
+            Component toTarget = Component.text("From " + sender.getName() + ": ", NamedTextColor.GRAY).append(message);
+            Component toSender = Component.text("To " + target.getName() + ": ", NamedTextColor.GRAY).append(message);
+            target.sendMessage(toTarget);
+            sender.sendMessage(toSender);
             return true;
         }
     }

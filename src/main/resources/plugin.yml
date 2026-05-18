@@ -4,8 +4,8 @@ main: com.aurates.boop.BoopPlugin
 api-version: '1.21'
 commands:
   boop:
-    description: Send a pink boop message
-    usage: /boop [player]
+    description: Send a pink boop message privately
+    usage: /boop <player>
   bonk:
-    description: Send a pink bonk message
-    usage: /bonk [player]
+    description: Send a pink bonk message privately
+    usage: /bonk <player>
