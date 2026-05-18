@@ -7,6 +7,6 @@ A minimal Paper plugin that adds two commands:
 
 If no player is provided, the command targets the executing player.
 
-![yepyep](https://klipy.com/gifs/kitty-yes-1)
+![yepyep](https://github.com/aurates/boop/blob/main/jK0A3Rtj.gif)
 
 yup yup im making useless and funny stuffs
