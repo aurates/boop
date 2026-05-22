@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.aurates</groupId>
-    <artifactId>boop</artifactId>
+    <artifactId>meow</artifactId>
     <version>1.1.0</version>
     <packaging>jar</packaging>
 
-    <name>boop</name>
+    <name>meow</name>
 
     <properties>
         <maven.compiler.release>21</maven.compiler.release>

@@ -1,11 +1,10 @@
-name: Boop
+name: Meow
 version: '${project.version}'
 main: com.aurates.boop.BoopPlugin
 api-version: '1.21'
 commands:
-  boop:
-    description: Send a pink boop message privately
-    usage: /boop <player>
-  bonk:
-    description: Send a pink bonk message privately
-    usage: /bonk <player>
+  meow:
+    description: Send a meow message privately
+    usage: /meow <player>
+    aliases:
+      - m

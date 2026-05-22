@@ -2,7 +2,7 @@ package com.aurates.boop;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,8 +14,7 @@ public final class BoopPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        registerCommand("boop", "Boop!");
-        registerCommand("bonk", "Bonk!");
+        registerCommand("meow", "§e§omeow! ᓚᘏ𑄝");
     }
 
     private void registerCommand(String commandName, String text) {
@@ -50,7 +49,7 @@ public final class BoopPlugin extends JavaPlugin {
                 return true;
             }
 
-            Component message = Component.text(messageText, NamedTextColor.LIGHT_PURPLE).decorate(TextDecoration.BOLD);
+            Component message = LegacyComponentSerializer.legacySection().deserialize(messageText);
             Component toTarget = Component.text("From " + sender.getName() + ": ", NamedTextColor.GRAY).append(message);
             Component toSender = Component.text("To " + target.getName() + ": ", NamedTextColor.GRAY).append(message);
             target.sendMessage(toTarget);
