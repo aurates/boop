@@ -1,9 +1,8 @@
-# boop
+# meow
 
-A minimal Paper plugin that adds two commands:
+A minimal Paper plugin that adds one command:
 
-- `/boop <player>` → sends a private message like `/msg` with `Boop!` in pink
-- `/bonk <player>` → sends a private message like `/msg` with `Bonk!` in pink
+- `/meow <player>` → sends a private message like `/msg` with `meow! ᓚᘏ𑄝` in yellow italics
 
 ![yepyep](https://github.com/aurates/boop/blob/main/jK0A3Rtj.gif)
 
